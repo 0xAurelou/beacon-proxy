@@ -5,6 +5,8 @@ pragma solidity 0.8.19;
 import {ERC20Upgradeable} from "openzeppelin-upgradeable-contracts/token/ERC20/ERC20Upgradeable.sol";
 
 contract Erc201 is ERC20Upgradeable {
+    uint public count;
+
     function initialize(
         string memory name,
         string memory symbol
@@ -12,7 +14,11 @@ contract Erc201 is ERC20Upgradeable {
         __ERC20_init(name, symbol);
     }
 
-    function getLifeResponse() external pure returns (string memory) {
-        return "42";
+    function increment(uint number) external {
+        count += number;
+    }
+
+    function getCount() external view returns (uint) {
+        return count;
     }
 }

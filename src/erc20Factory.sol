@@ -15,7 +15,7 @@ contract Erc20Factory {
     Erc20Beacon public immutable beacon;
 
     constructor(address _logic) {
-        beacon = new Erc20Beacon(_logic);
+        beacon = Erc20Beacon(_logic);
     }
 
     function createErc20(
@@ -36,5 +36,14 @@ contract Erc20Factory {
         string memory symbol
     ) public view returns (address) {
         return erc20s[keccak256(abi.encodePacked(name, symbol))];
+    }
+
+    function getBeaconAddress() public view returns (address) {
+        return address(beacon);
+    }
+
+    function forwardCall(address target, bytes memory data) public {
+        (bool success, bytes memory result) = target.call(data);
+        require(success, string(result));
     }
 }
