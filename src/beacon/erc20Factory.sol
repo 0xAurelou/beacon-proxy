@@ -2,9 +2,9 @@
 
 pragma solidity 0.8.19;
 
-import "src/erc20.sol";
+import "src/beacon/erc20.sol";
 
-import "src/erc20Beacon.sol";
+import "src/beacon/erc20Beacon.sol";
 
 import "openzeppelin-contracts/proxy/beacon/BeaconProxy.sol";
 

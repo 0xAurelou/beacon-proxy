@@ -2,10 +2,10 @@
 
 pragma solidity 0.8.19;
 
-import "src/erc20.sol";
-import "src/erc20Beacon.sol";
-import "src/erc20Factory.sol";
-import "src/erc201.sol";
+import "src/beacon/erc20.sol";
+import "src/beacon/erc20Beacon.sol";
+import "src/beacon/erc20Factory.sol";
+import "src/beacon/erc201.sol";
 
 import "forge-std/Test.sol";
 
